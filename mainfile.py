@@ -33,6 +33,7 @@ while cam.isOpened():
         else:
             if(flag == 0):
                 playsound.playsound("/Users/utkarsh/Downloads/RPzvNzyQZTI_48 (1).mp3") #you are dead audio
+                playsound.playsound("/Users/utkarsh/Desktop/omaewa-mou-shindeiru-sound-effect.mp3")  # omairu-mou-shindeiru audio
                 quit()
     flag = 0
     num +=1

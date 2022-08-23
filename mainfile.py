@@ -21,14 +21,14 @@ while cam.isOpened():
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
     # Creating a threshold for the movement to be large enough for detection
-    _, thresh = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY)
+    _, thresh = cv2.threshold(blur, 60, 255, cv2.THRESH_BINARY)
 
     # Dilating and making contours(boxes around detected image)
     dilated = cv2.dilate(thresh, None, iterations=3)
     contours, _ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     for i in contours:
-        if cv2.contourArea(i) < 2000:
+        if cv2.contourArea(i) < 1000:
             continue
         else:
             if(flag == 0):
